@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cats!</title>
+  </head>
+  <body>
+    <h1>Cats!</h1>
+    <p><img style="width: 400px;" alt="cat" src="https://www.ag.ndsu.edu/burleighcountyextension/agriculture/small-animals/small-animals/images/4_kittens.jpg?isImage=1">
+      <br><span style="font-size: 70%">(These are actually kittens, not cats.) Image courtesy of <a target="_blank" href="https://commons.wikimedia.org/wiki/File:4_Kittens.jpg">ag.ndsu.edu</a></span>
+    <form action="success.html" method="post">
+      <div>
+        <label>Tell us everything you know about cats:</label>
+        <textarea name="cat_info" placeholder="Don't hold back!"></textarea>
+      </div>
+      <div>
+        <label>Choose your favorite name for a cat:</label>
+        <select name="fav_cat_name">
+          <option value=“” selected>Please choose</option>
+          <option value="sammich">Sammich</option>
+          <option value="river">River</option>
+          <option value="salem">Salem</option>
+        </select>
+      </div>
+      <div>
+        <label>Do you love cats?</label>
+        <input name="love" type="checkbox" value="agree">
+      </div>
+      <div>
+        <label>Email:</label>
+        <input name="user_email" type="email" placeholder="Give us your email!">
+      </div>
+      <div>
+        <label>Password:</label>
+        <input placeholder="Don't put cat's name!" name="user_password" type="password">
+      </div>
+      <div>
+      </div>
+      <div>
+        <button type="submit">Click here to submit</button><button type="reset">(Reset) Don't click this one!</button>
+      </div>
+    </form>
+
+  </body>
+</html>
