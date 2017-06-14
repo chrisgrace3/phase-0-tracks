@@ -1,0 +1,24 @@
+
+div#octopus-container {
+  width: 250px;
+  margin: auto;
+  margin-top: 150px;
+  position: relative;
+}
+
+img#octopus {
+  margin: auto;
+
+}
+
+img#hat {
+  position: absolute;
+  left:  -15px;
+  top: -75px;
+}
+
+img#glasses {
+  position: absolute;
+  bottom: 135px;
+  left: 43px;
+}
