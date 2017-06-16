@@ -30,3 +30,18 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+body {
+  width: 960px;
+}
+
+#external-links {
+  width: 200px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+main {
+  width: 756px;
+  display: inline-block;
+}
