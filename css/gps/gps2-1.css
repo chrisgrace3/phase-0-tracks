@@ -1,0 +1,30 @@
+header {
+  background-color: blue;
+  border: 2px solid black;
+/*   height: 10px;
+  width: 50px;
+  display: inline; */
+}
+.column-1 {
+  background-color: gray;
+  /* float: left; */
+  display: inline-block;
+  width: 49%;
+  vertical-align: top;
+  border-right: 2px solid black;
+
+
+}
+.column-2 {
+  background-color: red;
+  display: inline-block;
+  /* float: right; */
+  width: 49%;
+  vertical-align: top;
+  border-left: 2px solid black;
+
+}
+footer {
+  background-color: green;
+  /* clear: both; */
+}
