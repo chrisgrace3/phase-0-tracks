@@ -1,0 +1,27 @@
+Release 0: Equip Your New Robot
+
+Enter the elevator
+Face direction of entrance
+Locate the panel of button next to elevator door
+Await user input for integer and assign integer to variable "floor_number"
+Locate the button on the panel with integer equal to "floor_number" and push the button
+If door does not close within 10 seconds, locate button on panel with the
+following symbol: '><'
+Push the button.
+
+Release 1: Find a Real-Life Algorithm
+
+How to brush your teeth
+Enter the bathroom and face the sink.
+Locate toothbrush
+If more than one toothbrush, locate toothbrush that belongs to you and hold it in your hand
+Otherwise look under sink for new toothbrush
+Locate toothpaste
+Remove toothpaste cap
+Squeeze a dab of toothpaste onto the head of your toothbrush
+Replace toothpaste cap and put toothpaste back to its original location
+Place toothbrush in mouth and brush teeth vigourously from left to right
+remove toothbrush from mouth and spit out tooth paste
+Rinse off toothbrush
+Put toothbrush back where you found it
+Leave the bathroom.
