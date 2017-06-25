@@ -1,0 +1,8 @@
+Enter the elevator
+Face direction of entrance
+Locate the panel of button next to elevator door
+Await user input for integer and assign integer to variable "floor_number"
+Locate the button on the panel with integer equal to "floor_number" and push the button
+If door does not close within 10 seconds, locate button on panel with the
+following symbol: '><'
+Push the button.
