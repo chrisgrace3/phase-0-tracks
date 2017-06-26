@@ -24,5 +24,14 @@ elsif age != (2017 - birth_year) && garlic_bread_b != "y" && h_insurance != "y"
 else
   puts "Results inconclusive."
 end
+allergies = " "
+until allergies == "done"
+puts "Do you have an allergy? Please name each, one at a time."
+puts "You may type 'done' when finished."
+allergies = gets.chomp
+end
+
+
 employees_today = employees_today - 1
 end
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
