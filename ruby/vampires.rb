@@ -1,3 +1,7 @@
+puts "How many employees will be processed today?"
+employees_today = gets.chomp.to_i
+
+while employees_today > 0
 puts "What's your name?"
 name = gets.chomp
 puts "How old are you?"
@@ -19,4 +23,6 @@ elsif age != (2017 - birth_year) && garlic_bread_b != "y" && h_insurance != "y"
   puts "Amost certainly a vampire."
 else
   puts "Results inconclusive."
+end
+employees_today = employees_today - 1
 end
