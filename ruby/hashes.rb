@@ -65,6 +65,7 @@ if correct == false
   print "Which item needs to be corrected? "
   item_correction = gets.chomp.to_sym
   print "Please enter correct value: "
+  # Here is where I am manipulating an array
   application[item_correction] = gets.chomp
   puts "\n\n Thank you! Here is what you entered: \n"
   p application
