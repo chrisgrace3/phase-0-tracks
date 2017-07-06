@@ -37,14 +37,13 @@ end
 puts "Colors before '.map' call:"
 puts colors
 
-colors.map! do |color|
-  color.capitalize
-end
+colors.map! { |color| color.capitalize }
 puts "Colors after '.map!' call (capitalize):"
 puts colors
 
 puts "Actors/Characters before '.each':"
 puts actors
+
 puts "\n\nActors/Characters after '.each':\n\n"
 actors.each do |character, actor|
   puts "#{character} was played by #{actor}."
