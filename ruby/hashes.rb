@@ -75,10 +75,14 @@ if correct == false
   # Here is where I am manipulating an array
   application[item_correction] = gets.chomp
   puts "\n\n Thank you! Here is what you entered: \n"
-  p application
-  puts "Have a nice day!"
+  application.each do |item|
+    print item
+  end
+  p "Have a nice day!"
 else
   puts "\n\n Thank you! Here is what you entered: \n"
-  p application
+  application.each do |item|
+    p item
+  end
   puts "Have a nice day!"
 end
