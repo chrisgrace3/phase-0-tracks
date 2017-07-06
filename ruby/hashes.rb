@@ -62,7 +62,14 @@ else
 end
 
 if correct == false
-  print "Which item needs to be corrected? "
+  print "Which item needs to be corrected?
+  name
+  age
+  children
+  theme
+  pets
+  apartment
+   "
   item_correction = gets.chomp.to_sym
   print "Please enter correct value: "
   # Here is where I am manipulating an array
