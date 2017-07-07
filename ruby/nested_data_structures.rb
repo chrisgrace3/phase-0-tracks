@@ -1,3 +1,4 @@
+# Orchestra Hash begins here
 orchestra = {
   woodwinds: {
     flutes: [
