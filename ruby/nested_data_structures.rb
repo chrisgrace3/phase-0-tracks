@@ -45,18 +45,22 @@ puts orchestra[:brass][:low_brass]
 puts "\n\nHere are the strings:"
 puts orchestra[:string_instruments]
 
-puts "\n\nStrings at index 2 (should be 'viola')."
+# printing string_instruments at index 2 (should be 'viola')
 puts orchestra[:string_instruments][2]
 
-puts "\n\nLow brass at index 0 (should be 'tuba')."
+# printing low brass at index 0 (should be 'tuba')
 puts orchestra[:brass][:low_brass][0]
 
-puts "\n\nHere are the strings again:"
+# adding cello to strings array
+puts "\n\nHere are the strings BEFORE the update:"
 puts orchestra[:string_instruments]
-puts "\nHere are the strings after adding 'cello' to strings array: "
 orchestra[:string_instruments].push("Cello")
+puts "Here are the strings AFTER the update: "
 puts orchestra[:string_instruments]
 
-puts "\n\nChanging 'Euphonium' to 'Baritone' in Low Brass array:"
+# Updating the low brass section to change 'Euphonium' to 'Baritone'
+puts "\n\nHere is the low brass section BEFORE the update:"
+puts orchestra[:brass][:low_brass]
+puts "Here is the low brass section AFTER the update:"
 orchestra[:brass][:low_brass][1] = 'Baritone'
 puts orchestra[:brass][:low_brass]
