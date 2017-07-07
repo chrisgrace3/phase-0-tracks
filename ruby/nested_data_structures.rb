@@ -1,19 +1,9 @@
-=begin
-Design and build a nested data structure to represent a real-world construct.
-
-Build something that will use a mix of hashes and arrays.
-
-Once you've built it, print a few individual pieces of deeply nested data
-from the structure, showing that you know how to use multiple indexes or
-hash keys (or both) to access nested items.
-
-Try to demonstrate a few different types of access.
-=end
 orchestra = {
   woodwinds: {
     flutes: [
-      'Side-Blown Flute',
-      'End-Blown Flute',
+      'Alto Flute in G',
+      'Tenor Flute',
+      'Soprano Flute in E Flat'
     ],
     double_reed: [
       'Bassoon',
@@ -32,16 +22,40 @@ orchestra = {
       "Trombone"
     ],
     trumpets: [
-      "B♭ trumpet",
+      "Piccolo",
       "Slide Trumpet",
       "Cornet",
     ],
   },
-  strings: [
-    "violin",
-    "bass",
-    "viola",
-    "cello"
+  string_instruments: [
+    "Violin",
+    "Bass",
+    "Viola",
     ]
 }
-p orchestra
+puts orchestra
+
+puts "\n\nHere are the flutes:"
+puts orchestra[:woodwinds][:flutes]
+
+puts "\n\nHere is the low brass section:"
+puts orchestra[:brass][:low_brass]
+
+puts "\n\nHere are the strings:"
+puts orchestra[:string_instruments]
+
+puts "\n\nStrings at index 2 (should be 'viola')."
+puts orchestra[:string_instruments][2]
+
+puts "\n\nLow brass at index 0 (should be 'tuba')."
+puts orchestra[:brass][:low_brass][0]
+
+puts "\n\nHere are the strings again:"
+puts orchestra[:string_instruments]
+puts "\nHere are the strings after adding 'cello' to strings array: "
+orchestra[:string_instruments].push("Cello")
+puts orchestra[:string_instruments]
+
+puts "\n\nChanging 'Euphonium' to 'Baritone' in Low Brass array:"
+orchestra[:brass][:low_brass][1] = 'Baritone'
+puts orchestra[:brass][:low_brass]
