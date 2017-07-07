@@ -28,20 +28,9 @@ until correct == "y" || correct == "yes"
 end
 
 # split name into an array and create new variable
-p "User name split: "
 user_name_array = user_name.split
-p user_name_array
-# reverse user_name elements to switch first and last name
-user_name_array = user_name_array.reverse
-p "First and Last switched:"
-p user_name_array
 user_first_name = user_name_array[0]
 user_last_name = user_name_array[1]
-p user_first_name
-p user_last_name
-# join the reversed first and last and create new variable
-user_name = user_name_array.join
-p user_name
 # user_name characters are now in correct order
 # begin character mapping algorithm
 =begin map:
@@ -52,12 +41,11 @@ p user_name
 -- u -> y
 -- y -> z
 =end
+user_first_name_array = user_first_name.downcase.split('')
+user_last_name_array = user_last_name.downcase.split('')
 
-# split user_name back into array
-user_name_array = user_name.split('')
-p user_name_array
-=begin
-user_name_array.map! do |character|
+def encrypt(name)
+name.map! do |character|
   if character == 'a'
     character = 'e'
   elsif character == 'e'
@@ -110,7 +98,24 @@ user_name_array.map! do |character|
     character = 'a'
   end
 end
+end
 
+encrypt(user_first_name_array)
+encrypt(user_last_name_array)
 
-p user_name_array
-=end
+user_first_name = user_first_name_array.join('').capitalize
+user_last_name = user_last_name_array.join('').capitalize
+user_name = user_last_name + " " + user_first_name
+
+all_users = []
+all_users << user_name
+
+print "Would you like to enter any additional names? (type 'y' if yes, otherwise enter 'quit to exit'.) "
+additional_names = gets.chomp.downcase
+until additional_names == "quit"
+  print "Enter name: "
+  new_name = gets.chomp.downcase
+
+end
+puts "Thank you. Here are your codenames: "
+puts all_users
