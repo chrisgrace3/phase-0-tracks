@@ -45,13 +45,13 @@ puts orchestra[:brass][:low_brass]
 puts "\n\nHere are the strings:"
 puts orchestra[:string_instruments]
 
-# printing string_instruments at index 2 (should be 'viola')
+# Printing string_instruments at index 2 (should be 'viola')
 puts orchestra[:string_instruments][2]
 
-# printing low brass at index 0 (should be 'tuba')
+# Printing low brass at index 0 (should be 'tuba')
 puts orchestra[:brass][:low_brass][0]
 
-# adding cello to strings array
+# Adding cello to strings array
 puts "\n\nHere are the strings BEFORE the update:"
 puts orchestra[:string_instruments]
 orchestra[:string_instruments].push("Cello")
