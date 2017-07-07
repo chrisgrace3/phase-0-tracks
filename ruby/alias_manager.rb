@@ -10,8 +10,12 @@ Take a name (e.g. "Felicia Torres") and create a fake name:
 =end
 all_users = []
 
-print "Please enter your first AND last name: "
+print "Please enter your first and last name: "
 original_user_name = gets.chomp.to_s
+until original_user_name.include? " "
+  print "You have only entered one name. \nPlease enter your first AND last name: "
+  original_user_name = gets.chomp.to_s
+end
 original_user_name_capitalize  = original_user_name.split.map!{|word| word.capitalize}.join(' ')
 
 
@@ -94,7 +98,7 @@ encrypt(user_last_name_array)
 user_first_name = user_first_name_array.join('').capitalize
 user_last_name = user_last_name_array.join('').capitalize
 user_name = user_last_name + " " + user_first_name
-all_users << user_name
+all_users << "The code name for #{original_user_name_capitalize} is '#{user_name}'."
 
 
 
@@ -102,14 +106,20 @@ def split(name_as_string)
   name_as_array = name_as_string.split(' ')
 end
 
-
-print "Would you like to enter any additional names? (type 'y' if yes, otherwise enter 'quit' to exit.) "
+additional_names = ''
+until additional_names == 'yes' || additional_names == 'y' || additional_names == 'quit' ||additional_names == 'n'
+print "Would you like to enter any additional names? (type 'y' if yes. Otherwise enter 'quit' to continue.) "
 additional_names = gets.chomp.downcase
+end
 until additional_names == "quit" || additional_names == 'n'
   print "Enter name: "
   new_user_original_name = gets.chomp.downcase
+  until new_user_original_name.include? " "
+    print "You have only entered one name. \nPlease enter a first AND last name: "
+    new_user_original_name = gets.chomp.to_s
+  end
+  new_user_original_name_capitalized = new_user_original_name.split.map!{|word| word.capitalize}.join(' ')
   split_new_user_name = split(new_user_original_name)
-  p split_new_user_name
   new_user_first_name = split_new_user_name[0]
   new_user_first_name_array = new_user_first_name.split('')
   new_user_last_name = split_new_user_name [1]
@@ -117,11 +127,13 @@ until additional_names == "quit" || additional_names == 'n'
   code_first = encrypt(new_user_first_name_array).join('').capitalize
   code_last = encrypt(new_user_last_name_array).join('').capitalize
   new_code_name = code_last + ' ' + code_first
-  p new_code_name
-  all_users << new_code_name
-  puts "Would you like to enter any additional names? (type 'y' if yes, otherwise enter 'quit' to exit.) "
+  all_users << "The code name for #{new_user_original_name_capitalized} is '#{new_code_name}'."
+  puts "Would you like to enter any additional names? (type 'y' if yes, otherwise enter 'quit' to continue.) "
   additional_names = gets.chomp.downcase
+  until additional_names == 'yes' || additional_names == 'y' || additional_names == 'quit' ||additional_names == 'n'
+  print "Would you like to enter any additional names? (type 'y' if yes. Otherwise enter 'quit' to continue.) "
+  additional_names = gets.chomp.downcase
+  end
 end
 puts "\n\nThank you. Here are your codenames: "
-puts "The code name for #{original_user_name_capitalize} is '#{user_name}'."
 puts all_users
