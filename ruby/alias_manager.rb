@@ -8,27 +8,15 @@ Take a name (e.g. "Felicia Torres") and create a fake name:
 --Change consonants to the next consonant.
 --Print alias to user
 =end
+all_users = []
 
-print "Please enter your first and last name: "
-user_name = gets.chomp.to_s
-# capitalize for user review only
-user_name  = user_name.split.map!{|word| word.capitalize}.join(' ')
-print "Is this correct? (y/n) "
-p user_name
-correct = gets.chomp.downcase
+print "Please enter your first AND last name: "
+original_user_name = gets.chomp.to_s
+original_user_name_capitalize  = original_user_name.split.map!{|word| word.capitalize}.join(' ')
 
-# allow for user to correct any errors
-until correct == "y" || correct == "yes"
-  print "Please enter your name: "
-  user_name = gets.chomp.to_s
-  user_name = user_name.split.map!{|word| word.capitalize}.join(' ')
-  print "Is this correct? (y/n) "
-  p user_name
-  correct = gets.chomp.downcase
-end
 
 # split name into an array and create new variable
-user_name_array = user_name.split
+user_name_array = original_user_name.split
 user_first_name = user_name_array[0]
 user_last_name = user_name_array[1]
 # user_name characters are now in correct order
@@ -106,16 +94,34 @@ encrypt(user_last_name_array)
 user_first_name = user_first_name_array.join('').capitalize
 user_last_name = user_last_name_array.join('').capitalize
 user_name = user_last_name + " " + user_first_name
-
-all_users = []
 all_users << user_name
 
-print "Would you like to enter any additional names? (type 'y' if yes, otherwise enter 'quit to exit'.) "
-additional_names = gets.chomp.downcase
-until additional_names == "quit"
-  print "Enter name: "
-  new_name = gets.chomp.downcase
 
+
+def split(name_as_string)
+  name_as_array = name_as_string.split(' ')
 end
-puts "Thank you. Here are your codenames: "
+
+
+print "Would you like to enter any additional names? (type 'y' if yes, otherwise enter 'quit' to exit.) "
+additional_names = gets.chomp.downcase
+until additional_names == "quit" || additional_names == 'n'
+  print "Enter name: "
+  new_user_original_name = gets.chomp.downcase
+  split_new_user_name = split(new_user_original_name)
+  p split_new_user_name
+  new_user_first_name = split_new_user_name[0]
+  new_user_first_name_array = new_user_first_name.split('')
+  new_user_last_name = split_new_user_name [1]
+  new_user_last_name_array = new_user_last_name.split('')
+  code_first = encrypt(new_user_first_name_array).join('').capitalize
+  code_last = encrypt(new_user_last_name_array).join('').capitalize
+  new_code_name = code_last + ' ' + code_first
+  p new_code_name
+  all_users << new_code_name
+  puts "Would you like to enter any additional names? (type 'y' if yes, otherwise enter 'quit' to exit.) "
+  additional_names = gets.chomp.downcase
+end
+puts "\n\nThank you. Here are your codenames: "
+puts "The code name for #{original_user_name_capitalize} is '#{user_name}'."
 puts all_users
