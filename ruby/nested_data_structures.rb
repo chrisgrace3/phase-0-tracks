@@ -36,7 +36,7 @@ orchestra = {
       "Slide Trumpet",
       "Cornet",
     ],
-  }
+  },
   strings: [
     "violin",
     "bass",
