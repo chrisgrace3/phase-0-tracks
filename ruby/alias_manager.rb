@@ -11,7 +11,7 @@ Take a name (e.g. "Felicia Torres") and create a fake name:
 all_users = []
 
 print "Please enter your first and last name: "
-original_user_name = gets.chomp.to_s
+original_user_name = gets.chomp
 until original_user_name.include? " "
   print "You have only entered one name. \nPlease enter your first AND last name: "
   original_user_name = gets.chomp.to_s
