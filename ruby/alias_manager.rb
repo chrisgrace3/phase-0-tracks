@@ -98,7 +98,7 @@ encrypt(user_last_name_array)
 user_first_name = user_first_name_array.join('').capitalize
 user_last_name = user_last_name_array.join('').capitalize
 user_name = user_last_name + " " + user_first_name
-all_users << "The code name for #{original_user_name_capitalize} is '#{user_name}'."
+all_users.push("The code name for #{original_user_name_capitalize} is '#{user_name}'.")
 
 
 
@@ -127,10 +127,10 @@ until additional_names == "quit" || additional_names == 'n'
   code_first = encrypt(new_user_first_name_array).join('').capitalize
   code_last = encrypt(new_user_last_name_array).join('').capitalize
   new_code_name = code_last + ' ' + code_first
-  all_users << "The code name for #{new_user_original_name_capitalized} is '#{new_code_name}'."
+  all_users.push("The code name for #{new_user_original_name_capitalized} is '#{new_code_name}'.")
   puts "Would you like to enter any additional names? (type 'y' if yes, otherwise enter 'quit' to continue.) "
   additional_names = gets.chomp.downcase
-  until additional_names == 'yes' || additional_names == 'y' || additional_names == 'quit' ||additional_names == 'n'
+  until additional_names == 'yes' || additional_names == 'y' || additional_names == 'quit' || additional_names == 'n'
   print "Would you like to enter any additional names? (type 'y' if yes. Otherwise enter 'quit' to continue.) "
   additional_names = gets.chomp.downcase
   end
