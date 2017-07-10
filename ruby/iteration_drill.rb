@@ -2,7 +2,7 @@
 
 zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
                               "shotgun", "compass", "CB radio", "batteries"]
-=begin
+
 # 1. Iterate through the zombie_apocalypse_supplies array using #each,
 # printing each item in the array separated by an asterisk
 zombie_apocalypse_supplies.each do |supply|
@@ -51,7 +51,7 @@ end
 combined_supplies = zombie_apocalypse_supplies.uniq
 p combined_supplies
 # Hash Drills
-=end
+
 extinct_animals = {
   "Passenger Pigeon" => 1914,
   "Tasmanian Tiger" => 1936,
