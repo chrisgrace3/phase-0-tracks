@@ -2,7 +2,7 @@
 
 zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
                               "shotgun", "compass", "CB radio", "batteries"]
-
+=begin
 # 1. Iterate through the zombie_apocalypse_supplies array using #each,
 # printing each item in the array separated by an asterisk
 zombie_apocalypse_supplies.each do |supply|
@@ -26,7 +26,16 @@ check(zombie_apocalypse_supplies, "compass")
 # 3. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5, using #each.
-# ----
+def remove(array)
+  new_backpack = []
+  array.each do |item|
+    if array.index(item) <= 4
+      new_backpack << item
+    end
+  end
+  p new_backpack
+end
+remove(zombie_apocalypse_supplies)
 
 # 4. You found another survivor! This means you can combine your supplies.
 # Create a new combined supplies list out of your zombie_apocalypse_supplies
@@ -35,10 +44,14 @@ check(zombie_apocalypse_supplies, "compass")
 # documentation for Arrays.
 other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
                             "solar battery", "flashlight"]
-# ----
 
+other_survivor_supplies.each do |item|
+  zombie_apocalypse_supplies << item
+end
+combined_supplies = zombie_apocalypse_supplies.uniq
+p combined_supplies
 # Hash Drills
-
+=end
 extinct_animals = {
   "Passenger Pigeon" => 1914,
   "Tasmanian Tiger" => 1936,
@@ -48,11 +61,14 @@ extinct_animals = {
   "West African Black Rhinoceros" => 2011,
   "Laysan Crake" => 1923
 }
-
+=begin
 # 1. Iterate through extinct_animals hash using #each, printing each key/value pair
 # with a dash in between the key and value, and an asterisk between each pair.
-# ----
-
+extinct_animals.each do |animal, year|
+  puts "#{animal} - #{year}"
+  puts "*"
+end
+=end
 # 2. Keep only animals in extinct_animals if they were extinct before
 # the year 2000, using #each.
 # ----
