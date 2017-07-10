@@ -5,12 +5,23 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 
 # 1. Iterate through the zombie_apocalypse_supplies array using #each,
 # printing each item in the array separated by an asterisk
-# ----
-
+zombie_apocalypse_supplies.each do |supply|
+  print "#{supply} * "
+end
+puts nil
 # 2. Create a method to see if a particular item (string) is in the
 # zombie_apocalypse_supplies using #each.
 # For instance: are boots in your list of supplies?
-# ----
+def check (array, item)
+  included = "No, that is not included."
+  array.each do |thing|
+    if thing == item
+      included = "Yes, #{thing} is included."
+    end
+  end
+  puts included
+end
+check(zombie_apocalypse_supplies, "compass")
 
 # 3. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
