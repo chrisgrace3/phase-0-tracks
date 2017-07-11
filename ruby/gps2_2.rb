@@ -54,10 +54,12 @@ end
   # take each item in the list and check it against the new input item
   # if the items match, update the quantity of the existing item to new quantity
 # output: New hash with an updated quantity of the item
-def update_quanity(list, item, new_quantity)
+def update_quantity(list, item, new_quantity)
   list.each do |key, value|
+    if key == item
      list[key] = new_quantity
-   end
+    end
+  end
    p list
 end
 
