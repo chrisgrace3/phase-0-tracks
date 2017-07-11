@@ -1,10 +1,10 @@
 # Method to create a list
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
 # steps:
-# Split list of input items
-# Assign each item to a key, with a value of 1
-  # Set default quantity to 1
-  # Print the list to the console. Once created, use print method.
+  # split list of input items
+  # assign each item to a key, with a value of 1
+  # set default quantity to 1
+  # print the list to the console. Once created, use print method.
 # output: A HASH
 def create_list(list_input)
   list_input_array = list_input.split(' ')
@@ -18,8 +18,8 @@ end
 # Method to add an item to a list
 # input: list, item name, and optional quantity
 # steps:
-  # Create method in taking the input arguments.  Within method add parameters key with optional quality as value.
-  # Assign new item to a key with a value of 1, IF no optional quantity
+  # create method in taking the input arguments.  Within method add parameters key with optional quality as value.
+  # assign new item to a key with a value of 1, IF no optional quantity
 # output: HASH with newly added item
 def item_adder(list, item, optional_quantity = 1)
   list[item] = optional_quantity
@@ -50,8 +50,10 @@ end
 # Method to update the quantity of an item
 # input: list (hash), existing item, new quantity
 # steps:
-  #
-# output: New hash with an updated quantity of an item
+  # define a method that will evaluate the list, the item, and the newly entered quantity
+  # take each item in the list and check it against the new input item
+  # if the items match, update the quantity of the existing item to new quantity
+# output: New hash with an updated quantity of the item
 def update_quanity(list, item, new_quantity)
   list.each do |key, value|
      list[key] = new_quantity
