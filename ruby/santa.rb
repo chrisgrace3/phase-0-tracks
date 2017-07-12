@@ -22,8 +22,11 @@ class Santa
     @age = @age + 1
   end
 
-  def get_mad_at
-
+  #  take a reindeer's name as an argument, and move that reindeer in last place in the reindeer rankings.
+    # Insert
+  def get_mad_at(name)
+    @reindeer_ranking.delete_at(@reindeer_ranking.index(name))
+    @reindeer_ranking << name
   end
 
 
@@ -49,3 +52,6 @@ end
 
 santa = Santa.new("female", "black")
 p santa.celebrate_birthday
+
+santa.get_mad_at("Dasher")
+p santa
