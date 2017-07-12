@@ -1,9 +1,12 @@
 # Create Santa class
 class Santa
 
-  def initialize(gender)
+  def initialize(gender, ethnicity)
     puts "Initializing Santa instance..."
     @gender = gender
+    @ethnicity = enthicity
+    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+    @age = 0
   end
 
   def speak
