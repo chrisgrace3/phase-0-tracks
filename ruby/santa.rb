@@ -29,6 +29,17 @@ class Santa
     @reindeer_ranking << name
   end
 
+  def change_gender(new_gender)
+    @gender = new_gender
+  end
+
+  def age
+    @age
+  end
+
+  def ethnicity
+    @ethnicity
+  end
 
 end
 
@@ -50,8 +61,14 @@ end
 # santas << Santa.new("female", "Native American")
 # p santas
 
-santa = Santa.new("female", "black")
-p santa.celebrate_birthday
+santa = Santa.new("female", "Latino")
+# p santa.celebrate_birthday
+#
+# santa.get_mad_at("Dasher")
+# p santa
+#
+# santa.change_gender("male")
+# p santa
 
-santa.get_mad_at("Dasher")
-p santa
+p santa.age
+p santa.ethnicity
