@@ -33,6 +33,10 @@ class Santa
     @gender = new_gender
   end
 
+  def gender
+    @gender
+  end
+
   def age
     @age
   end
@@ -62,13 +66,15 @@ end
 # p santas
 
 santa = Santa.new("female", "Latino")
-# p santa.celebrate_birthday
-#
-# santa.get_mad_at("Dasher")
-# p santa
-#
-# santa.change_gender("male")
-# p santa
+p santa.celebrate_birthday
+
+santa.get_mad_at("Dasher")
+p santa
+
+p santa.gender
+santa.change_gender("male")
+p santa
 
 p santa.age
 p santa.ethnicity
+p santa.gender
