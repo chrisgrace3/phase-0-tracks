@@ -1,7 +1,7 @@
 # Create Santa class
 class Santa
   attr_reader :age, :ethnicity
-  attr_accessor :gender
+  attr_accessor :gender, :age
 
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance..."
@@ -33,6 +33,20 @@ class Santa
 
 end
 
+santas = []
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+5.times do
+  santas << Santa.new(example_genders[rand(1..7)], example_ethnicities[rand(0..6)])
+end
+
+santas.each do |santa|
+  santa.age = rand(0..140)
+end
+
+santas.each do |santa|
+end
 
 # DRIVER CODE ****************************************************
 
@@ -51,14 +65,14 @@ end
 # santas << Santa.new("female", "Native American")
 # p santas
 
-santa = Santa.new("female", "Latino")
-p santa.celebrate_birthday
-
-santa.get_mad_at("Dasher")
-p santa
-
-santa.gender = "male"
-p santa
-
-p santa.age
-p santa.ethnicity
+# santa = Santa.new("female", "Latino")
+# p santa.celebrate_birthday
+#
+# santa.get_mad_at("Dasher")
+# p santa
+#
+# santa.gender = "male"
+# p santa
+#
+# p santa.age
+# p santa.ethnicity
