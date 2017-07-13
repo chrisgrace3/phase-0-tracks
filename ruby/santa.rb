@@ -37,10 +37,13 @@ santas = []
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
+# Create 100 instances of Santa and shovel inside of an array.
+# Set a random gender and random ethnicity to each
 100.times do
   santas << Santa.new(example_genders[rand(1..7)], example_ethnicities[rand(0..6)])
 end
 
+# Set a random age for each instance of Santa
 santas.each do |santa|
   santa.age = rand(0..140)
 end
