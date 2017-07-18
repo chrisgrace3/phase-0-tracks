@@ -7,6 +7,7 @@ class WordGame
   attr_writer   :all_guesses_array     # list of all unique wrong guesses
   attr_accessor :solved
 
+
   def initialize(entry)
     @answer_string = entry.downcase
     @answer_array = @answer_string.split('')
@@ -22,34 +23,40 @@ class WordGame
   end # initialize method end
 
 
-  def check_guess(guess)
-    x = @answer_length
-    y = 0
+  def letter_board_reveal(letter_guessed)
+    @index = 0
+    @answer_array.each do |letter|
+      if letter == letter_guessed
+        @letter_board_array[@index] = letter
+      end
+      @index +=1
+    end
+  end
 
-    while x > y
-      guess_array = guess.split('')
+
+  def check_guess(guess)
+    @x = @answer_length
+    @y = 0
+
+    while @x > @y
+      @guess_array = guess.split('')
         if @answer_string == guess
            @solved = true
            break
-         elsif @answer_string != guess
-           guess_array.each do |x|
-             if @answer_string == guess
-                @solved = true
-                break
-             elsif @answer_array.include?(x) || (!@letter_board_array.include?(guess))
-               index = @answer_array[guess_array.index(x)]
-               @letter_board_array[index.to_i] = x
-               puts "Not quite, but you got some characters correct:"
-               puts @letter_board_array.join
-               puts "Now guess again!"
-               guess = gets.chomp.downcase
-               y += 1
-             end
-           end
-         elsif @letter_board_array.include?(guess)
-           puts "You already guessed that!"
-           puts "Try again."
+        elsif @letter_board_array.include?(guess)
+          puts "You already guessed that!"
+          puts "Try again."
+        elsif @answer_string != guess
+          puts "Not quite, but you got some characters correct:"
+          @guess_array.each do |x|
+            letter_board_reveal(x)
+          end
+          @y+=1
+          p @letter_board_array.join('')
+
         end
+        puts "Guess again:"
+        guess = gets.chomp
     end
   end
 end
@@ -62,31 +69,6 @@ puts "Give me a word for someone to guess:"
 entry = gets.chomp.downcase
 
 game = WordGame.new(entry)
-puts
-puts
-puts
-puts
-puts
-puts
-puts
-puts
-puts
-puts
-puts
-puts
-puts
-puts
-puts
-puts
-puts
-puts
-puts
-puts
-puts
-puts
-puts
-puts
-puts
 puts
 puts
 puts
