@@ -3,14 +3,11 @@
 # I worked on this challenge [by myself, with: ].
 # We spent [#] hours on this challenge.
 
-# EXPLANATION OF require_relative
-#
-#
+
 require_relative 'state_data'
 require 'pry'
 
 class VirusPredictor
-
   #when an instance of the VirusPredictor class is initialized
   # these instance variable are set by the initializion arguments
   def initialize(state_of_origin, population_density, population)
@@ -22,6 +19,7 @@ class VirusPredictor
 
   # ("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
   # does a whole bunch
+
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
@@ -71,15 +69,6 @@ class VirusPredictor
 
   end
 
-#Create a report for all 50 states in a DRY way. Does this belong inside the class or outside of it? Why?
-
-  def all_states_report()
-
-
-  end
-
-
-
 
 end
 
@@ -101,6 +90,7 @@ california.virus_effects
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
 
+#New method belongs outside of the class because it's not a class method. It's a block.
 STATE_DATA.each do |state, value|
   new_state = VirusPredictor.new(state, value[:population_density], value[:population])
   new_state.virus_effects
@@ -114,3 +104,19 @@ end
 
 # Write a comment explaining the require_relative statement. What does it do?
 # How does it work? How does it differ from require?
+
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+  # The state data hash uses hash rockets for each key/value pair.
+  # The hashes inside the state data keys uses symbols for keys.
+
+# What does require_relative do? How is it different from require?
+  # require_relative: You can enter a path to the reference file starting from the current directory
+  # require: The path to the reference file begins at the root directory
+
+# What are some ways to iterate through a hash?
+  # The .each method is the best I've found
+  # you could also use hash.length.times do
+
+# When refactoring virus_effects, what stood out to you
+  # I had trouble with that part, and I'm running out of time and have
+  # too much other work that is due in two days so I have to move on

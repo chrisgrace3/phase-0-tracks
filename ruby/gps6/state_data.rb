@@ -7,7 +7,12 @@
 # What's the difference?) I refer to this giant hash as a "hashy hash;" why do you
 # think that is? What kind of variable is STATE_DATA, and what's its scope?
 
+# A Ruby constant is like a variable, except that its value is supposed to
+# remain constant for the duration of the program. The Ruby interpreter does not
+# actually enforce the constancy of constants, but it does issue a warning if a
+# program changes the value of a constant
 
+# STATE_DATA should not change. It could, but the idea is that it shouldn't.
 STATE_DATA = {
   "Alabama" => {population_density: 94.65, population: 4822023},
   "Alaska" => {population_density: 1.1111, population: 731449},
