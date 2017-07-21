@@ -15,5 +15,3 @@ names.push("Horsey McHorseface");
 for (var i = 0; i < names.length; i++) {
     console.log("The name of your horse is " + names[i] + " and it is a gorgeouse shade of " + colors[i]);
 }
-
-hello
