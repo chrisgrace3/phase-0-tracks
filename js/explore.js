@@ -20,11 +20,3 @@ function reverse(word) {
 console.log(reverse("hello"))
 
 // => olleh
-
-
-
-// DRIVER CODE
-var word = reverse("word") == "drow";
-console.log(word);
-var javaScript = reverse("JavaScript") == "tpircSavaJ";
-console.log(javaScript);
