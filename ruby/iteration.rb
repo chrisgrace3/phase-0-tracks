@@ -1,91 +1,70 @@
-# Define a method
-# Add "yield" to connect with a block
-# add block and call the method
-=begin
-def pets
-  print "How man pets do you have? "
-  number_pets = gets.chomp.to_i
-  print "Do you prefer dogs or cats? "
-  preference = gets.chomp
-  yield(number_pets, preference)
-end
+# DBC Wee 5:
+# 5.3 MP: Iteration
 
-pets { |var1, var2| puts "I heard you have #{var1} pets! I assume they are #{var2}?"  }
-=end
+# Release 1: Use each, map, and map!
 
-# declare an array
-colors = ["blue","red","green","yellow"]
-colors_after_map = []
+# create array
+colors = ["blue", "red", "green", "yellow"]
 
-# declare a hash
-actors = {
-  "Batman" => "Ben Affleck",
-  "Superman" => "Henry Cavill",
-  "Wonder Woman" => "Gal Gadot",
-  "Lex Luthor" => "Jesse Eisenberg"
+# create hash
+car = {ford: "taurus",
+vw: "cc",
+porsche: "cayenne",
+chevy: "silverado"
 }
 
-#use .each with colors
-puts "Colors before '.each' call:"
-puts colors
-puts "Colors after '.each' call (upcase):"
+# each block for array
 colors.each do |color|
-  puts color.upcase
+  puts color.capitalize
 end
 
-#use .map! with colors
-puts "Colors before '.map' call:"
-puts colors
-
-colors.map! { |color| color.capitalize }
-puts "Colors after '.map!' call (capitalize):"
-puts colors
-
-puts "Actors/Characters before '.each':"
-puts actors
-
-puts "\n\nActors/Characters after '.each':\n\n"
-actors.each do |character, actor|
-  puts "#{character} was played by #{actor}."
+# map block for array
+new_arr = []
+colors.map do |color|
+  new_arr << color.swapcase
 end
 
-numbers = [1, 2, 3, 4 ,5, 6, 7, 8, 9, 10]
-even_numbers = []
-p numbers
-numbers.delete_if { |number| number < 5 }
-    p numbers
-#less_than_5 = numbers.delete_if { |number| number < 5 }
-puts numbers
-numbers.keep_if { |number| number > 5 }
-p numbers
-even_numbers =  numbers.select { |number| number.even? }
-p even_numbers
+# map! for array
+colors.map! do |color|
+  color.reverse
+end
 
-new_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-p new_array
-less_than_7 = []
-less_than_7 =  new_array.take_while { |num| num < 7 }
-p less_than_7
+# each for hash
+car.each do |make, model|
+  puts "My #{make} #{model} is the best car!!"
+end
 
-student = { age: 29,
-    weeks_on_program: 6,
-    weeks_til_site: 4,
-    weeks_on_site: 9
+# Release 2:
+
+# create array
+num_array = [1,2,3,4,5,6,7,8,9,10]
+
+# create hash
+num_hash = {
+  one: 1,
+  two: 2,
+  three: 3,
+  four: 4
 }
-new_student = {}
-p student
-student.delete_if { |item, integer| integer > 10 }
-p student
-student.keep_if { |item, integer| integer < 7 }
-p student
-new_student =  student.invert
-p new_student
 
-people = { age: 29,
-    weeks_on_program: 6,
-    weeks_til_site: 4,
-    weeks_on_site: 9
-}
-p people
-even_people = people.keep_if { |item, integer| integer.even? }
-p even_people
+# 1. A method that iterates through the items, deleting any that meet a certain condition (for example, deleting any numbers that are less than 5).
+
+num_array.delete_if {|x| x > 5}
+
+car.delete_if {|k, v| v == "cayenne"}
+
+# 2. A method that filters a data structure for only items that do satisfy a certain condition (for example, keeping any numbers that are less than 5).
+
+num_array.keep_if {|x| x <= 4}
+
+num_hash.keep_if {|key, value| key == :two}
+
+# 3. A different method that filters a data structure for only items satisfying a certain condition -- Ruby offers several options!
+
+even_numbers = num_array.select {|num| num.odd?}
+
+new_hash = num_hash.reject {|key, value| key.length > 3}
+
+# 4. A method that will remove items from a data structure until the condition in the block evaluates to false, then stops (you may not find a perfectly working option for the hash, and that's okay).
+
+arr = num_array.take_while {|x| x < 5}
