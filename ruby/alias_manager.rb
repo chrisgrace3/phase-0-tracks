@@ -73,7 +73,3 @@ puts
 codenames_list.each do |name, codename|
   puts "The codename generated for #{name} is \"#{codename}\"."
 end
-
-
-
-# Driver code
