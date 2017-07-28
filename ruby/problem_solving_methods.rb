@@ -1,10 +1,9 @@
 # RELEASE 0
-# Take an array and a number, evaluate each object in the array
-# such that the index of the item prints if same as number provided in argument.
+# take an input. the input will be an ARRAY of INTEGERS
+# create a method that will allow the array to be searched for a specific INTEGER
+# if present, provide index. if not present, return nil
 
-
-# define the method
-def search(array, num)
+def search array, num
   index = 0
   match = nil
   array.each do |digit|
@@ -18,7 +17,10 @@ def search(array, num)
 end
 
 arr = [42, 89, 23, 1]
-search(arr, 42)
+search arr, 5
+
+
+
 
 # RELEASE 1
 # Calculate Fibonacci Numbers
