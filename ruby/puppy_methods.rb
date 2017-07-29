@@ -1,6 +1,8 @@
 class Puppy
+
   def initialize
-    puts "Initializing new puppy instance ..."
+    puts "Initializing new puppy instance ... "
+
   end
 
   def fetch(toy)
@@ -8,10 +10,9 @@ class Puppy
     toy
   end
 
-  def speak(num)
-    num.times do
+  def speak(int)
+    int.times do
       puts "Woof!"
-    num
     end
   end
 
@@ -19,56 +20,47 @@ class Puppy
     puts "*rolls over*"
   end
 
-  def dog_years(num)
-    puts num *= 7
-    num
+  def dog_years(int)
+    int * 7
   end
 
-  def high_five
-    puts "*high fives*"
+  def play_dead
+    puts "*plays dead*"
   end
 
 end
 
-class Cars
+class Kitten
+
   def initialize
-    puts "Initialized new instance of Cars!"
+    puts "Initializing kitten class ..."
   end
 
-  def start_up
-    puts "VRRROOMMMMM"
+  def pet
+    puts "purrr..."
   end
 
-  def fill_up(gallons)
-    puts "Added #{gallons} gallons of gas!"
-    gallons
+  def give_catnip
+    puts "*goes nuts*"
   end
+
 end
 
-#DRIVER CODE **********************
-bmw = Cars.new
-bmw.start_up
-bmw.fill_up(10)
+# ****************** DRIVER CODE ************************************************************************
 
-garage = []
+fido = Puppy.new
+fido.fetch("ball")
+fido.speak(2)
+fido.roll_over
+p fido.dog_years(3)
+fido.play_dead
 
+playpen = []
 50.times do
-  garage.push(porche = Cars.new)
+  playpen << Kitten.new
 end
 
-garage.each do |car|
-  car.start_up
-  car.fill_up(10)
+playpen.each do |kitten|
+  kitten.give_catnip
+  kitten.pet  
 end
-#
-# garage.each do |car|
-#   car.fill_up(10)
-# end
-
-# fido = Puppy.new
-# fido.fetch("ball")
-# fido.speak(4)
-# fido.roll_over
-# fido.dog_years(3)
-# fido.high_five
-# fido.initialize
