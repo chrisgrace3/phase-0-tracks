@@ -1,7 +1,7 @@
 class Santa
 
   def initialize
-    "Initializing Santa instance ..."    
+    puts "Initializing Santa instance ..."
   end
 
   def speak
@@ -15,3 +15,13 @@ class Santa
 
 
 end
+
+
+
+# ***** DRIVER CODE ************************************************************
+
+nick = Santa.new
+
+nick.speak
+
+nick.eat_milk_and_cookies('sugar cookie')
