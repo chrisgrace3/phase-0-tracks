@@ -40,6 +40,8 @@ example_genders = ["agender", "female", "bigender", "male", "female", "gender fl
 example_ethnicities = ["black", "Latino", "white", "Japanese-African",
   "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
+# create an array of 10 instances of the Santa class
+# generate random gender, ethnicity and age
 santas = []
 10.times do
   santas << Santa.new(
@@ -49,11 +51,13 @@ santas = []
   )
 end
 
+# print out a sentence with attributes for each instance in the santas array
 santas.each do |santa|
   puts "This santa is #{santa.age} years old, is #{santa.ethnicity} and #{santa.gender}."
 end
 
 
+# ************** OLD DRIVER CODE ********************************************************
 
 # santas = []
 # example_genders.length.times do
