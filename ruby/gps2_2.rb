@@ -7,15 +7,14 @@
 # output: [what data type goes here, array or hash?]
 
 
-def create_list(string)
+def create_list(items)
   grocery_list = {}
-  list_arry = string.split(' ')
+  list_arry = items.split(' ')
   list_arry.each do |item|
   grocery_list[item] = 1
   end
-  grocery_list
+  pretty_list grocery_list
 end
-
 
 
 # Method to add an item to a list
@@ -26,8 +25,8 @@ end
   # Assign item to key, and quanity to value
 # output: list (hash) with new item/quantity added
 
-def add_item(list, new_item_string, quantity = 1)
-  list[new_item_string] = quantity
+def add_item(list, new_item, quantity = 1)
+  list[new_item] = quantity
   list
 end
 
@@ -37,8 +36,8 @@ end
   # Remove item from hash
 # output:
 
-def remove_item(list, item_string)
-  list.delete(item_string)
+def remove_item(list, item)
+  list.delete(item)
   list
 end
 
@@ -49,24 +48,18 @@ end
   # else if quantity is more than zero, update quanity (value)
 # output: hash with updated quantity of item
 
-def update_quantity(list, item_string, quantity)
+def update_quantity(list, item, quantity)
   if quantity == 0
-    list.delete(item_string)
+    remove_item(list, item)
   else
-    list[item_string] = quantity
+    list[item] = quantity
   end
-  list
 end
 
 # Method to print a list and make it look pretty
 # input: list
 # steps: print each key/value pair as a pretty vertical list
 # output:
-
-# # Lemonade, qty: 2
-# # Tomatoes, qty: 3
-# # Onions, qty: 1
-# Ice Cream, qty: 4
 
 def pretty_list(list)
   list.each do |item, quantity|
@@ -77,14 +70,14 @@ end
 # DRIVER CODE **********************************************************************
 
 grocery_list = create_list("carrots apples cereal pizza")
-p grocery_list
 
-p add_item(grocery_list, "ice cream", 2)
+add_item(grocery_list, "lemonade", 2)
+add_item(grocery_list, "tomatoes", 3)
+add_item(grocery_list, "onions", 1)
+add_item(grocery_list, "ice cream", 4)
 
-# p remove_item(grocery_list, "apples")
+remove_item(grocery_list, "lemonade")
 
-p update_quantity(grocery_list, "carrots", 0)
-
-p update_quantity(grocery_list, "pizza", 5)
+update_quantity(grocery_list, "ice cream", 1)
 
 pretty_list(grocery_list)
