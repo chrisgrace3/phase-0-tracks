@@ -43,14 +43,36 @@ def remove_item(list, item_string)
 end
 
 # Method to update the quantity of an item
-# input:
+# input: list, item name, quantity
 # steps:
-# output:
+  # if quantity is zero, delete
+  # else if quantity is more than zero, update quanity (value)
+# output: hash with updated quantity of item
+
+def update_quantity(list, item_string, quantity)
+  if quantity == 0
+    list.delete(item_string)
+  else
+    list[item_string] = quantity
+  end
+  list
+end
 
 # Method to print a list and make it look pretty
-# input:
-# steps:
+# input: list
+# steps: print each key/value pair as a pretty vertical list
 # output:
+
+# # Lemonade, qty: 2
+# # Tomatoes, qty: 3
+# # Onions, qty: 1
+# Ice Cream, qty: 4
+
+def pretty_list(list)
+  list.each do |item, quantity|
+    puts "#{item.capitalize}, qty: #{quantity}"
+  end
+end
 
 # DRIVER CODE **********************************************************************
 
@@ -59,4 +81,10 @@ p grocery_list
 
 p add_item(grocery_list, "ice cream", 2)
 
-p remove_item(grocery_list, "apples")
+# p remove_item(grocery_list, "apples")
+
+p update_quantity(grocery_list, "carrots", 0)
+
+p update_quantity(grocery_list, "pizza", 5)
+
+pretty_list(grocery_list)
