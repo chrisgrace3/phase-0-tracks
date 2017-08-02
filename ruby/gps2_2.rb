@@ -21,13 +21,26 @@ end
 # Method to add an item to a list
 # input: list, item name, and optional quantity
 # steps:
-  #
-# output:
+  # Add the item into the list (hash)
+  # Default value of 1
+  # Assign item to key, and quanity to value
+# output: list (hash) with new item/quantity added
+
+def add_item(list, new_item_string, quantity = 1)
+  list[new_item_string] = quantity
+  list
+end
 
 # Method to remove an item from the list
-# input:
+# input: list (hash), item name (string)
 # steps:
+  # Remove item from hash
 # output:
+
+def remove_item(list, item_string)
+  list.delete(item_string)
+  list
+end
 
 # Method to update the quantity of an item
 # input:
@@ -43,3 +56,7 @@ end
 
 grocery_list = create_list("carrots apples cereal pizza")
 p grocery_list
+
+p add_item(grocery_list, "ice cream", 2)
+
+p remove_item(grocery_list, "apples")
