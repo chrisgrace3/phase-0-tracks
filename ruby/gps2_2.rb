@@ -8,7 +8,7 @@
 
 
 def create_list(items)
-  grocery_list = {} 
+  grocery_list = {}
   items.split.each {|item| grocery_list[item] = 1}
   pretty_list grocery_list
 end
@@ -59,9 +59,7 @@ end
 # output:
 
 def pretty_list(list)
-  list.each do |item, quantity|
-    puts "#{item.capitalize}, qty: #{quantity}"
-  end
+  list.each {|item, quantity| puts "#{item.capitalize}, qty: #{quantity}"}
 end
 
 # DRIVER CODE **********************************************************************
