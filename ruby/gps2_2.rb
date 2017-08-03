@@ -8,11 +8,8 @@
 
 
 def create_list(items)
-  grocery_list = {}
-  list_arry = items.split
-  list_arry.each do |item|
-  grocery_list[item] = 1
-  end
+  grocery_list = {} 
+  items.split.each {|item| grocery_list[item] = 1}
   pretty_list grocery_list
 end
 
@@ -79,5 +76,5 @@ add_item(grocery_list, "ice cream", 4)
 remove_item(grocery_list, "lemonade")
 
 update_quantity(grocery_list, "ice cream", 1)
-
+puts
 pretty_list(grocery_list)
