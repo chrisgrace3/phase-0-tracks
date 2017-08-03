@@ -9,7 +9,7 @@
 
 def create_list(items)
   grocery_list = {}
-  list_arry = items.split(' ')
+  list_arry = items.split
   list_arry.each do |item|
   grocery_list[item] = 1
   end
