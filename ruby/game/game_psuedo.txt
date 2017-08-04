@@ -11,25 +11,12 @@ So if the secret word is "unicorn", the user will start out seeing something lik
 The user should get a congratulatory message if they win, and a taunting message if they lose.
 
 ----------------------------------------------------------------------------------------------------
-step 1
-input: word (string)
-steps:
-  1. split up the word by letter and put into a hash with "_" for each value
-  2. return values upon each guess
-output: string as underscores and message asking for word to be guessed
+  A word is input upon initialization
 
-step 2
-input: letter or word (string)
-steps:
-  1. check hash keys for letter, if present, change value to letter
-  2. if user guesses a letter and the letter is not present, up the counter by
-  one and output warning message
-  3. if user guesses a word and it does not match the original word, up the counter by
-  one and output warning message
-  4. if user guesses the word and it is the original, output congratulatory message
-  5. if user guesses exceed the length of the word, output game loss message
-output:
-  1. congratulations if word is correct,
-  2. phrase with letter if letter is correct,
-  3. please try again with number of guesses left
-  4. failure message if guesses are more than length of word
+  - variable that indicates whether the game is over or not (is over: true or false)
+  - counter that starts at zero and adds 1 for every unique guess.
+  - if counter == length of word, game over. continue as long as counter is less
+  than link of word
+
+  if user enters a letter, and letter is in the word, return word with guessed letters
+  filled in and non-guessed letters as underscores
