@@ -1,40 +1,34 @@
 # module Shout
 #   def self.yell_angrily(words)
-#     words + '!!!' + ' :('
-#
+#     words + "!!!" + " :("
 #   end
-# end
 #
-# module Shout
-#   def self.yelling_happily(words)
-#     words = '!!! :)'
+#   def self.yell_happily(words)
+#     words + "!!!" + " :)"
 #   end
 # end
 
 module Shout
   def yell_angrily(words)
-    words + '!!!' + ' :('
+    words + "!!!" + " :("
   end
 
-  def yelling_happily(words)
-    words + '!!! :)'
+  def yell_happily(words)
+    words + "!!!" + " :)"
   end
 end
 
-class Drill_Sergeant
+class OldMan
   include Shout
 end
 
-class Cat
+class Actor
   include Shout
 end
 
-# *********** DRIVER CODE ***************************************
+leo = Actor.new
+clint = OldMan.new
 
-tiger = Cat.new
-puts tiger.yell_angrily('meow')
-puts tiger.yelling_happily('meeooww')
+puts clint.yell_angrily("Get off my lawn")
 
-hartman = Drill_Sergeant.new
-puts hartman.yell_angrily('Drop and give me twenty')
-puts hartman.yelling_happily('Didn\'t think you maggots had it in you' )
+puts leo.yell_happily("I'm king of the world")
