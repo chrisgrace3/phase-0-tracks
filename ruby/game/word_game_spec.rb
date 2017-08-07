@@ -3,11 +3,6 @@ require_relative 'word_game'
 describe WordGame do
     let(:game) { WordGame.new("word") }
 
-
-  it "stores and returns given solution" do
-    expect(game.answer).to eq ("WORD")
-  end
-
   it "returned the length of the word as guesses allowed" do
     expect(game.chances).to eq 4
   end
