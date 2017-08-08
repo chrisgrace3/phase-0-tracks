@@ -1,11 +1,8 @@
-// reverse function should work using the string index
-// take a string as an input and runs a FOR loop
-// create an empty string variable to add the letters in from the word backwards
-// in the for loop, create variable that will incrememnt backwards from length of string to 0
-// continue the loop until is is equal to 0
-// continually subtract one from the incrememnt variable and add the letter at
-// the current index as you count down.
-
+// reverse function should work using the string index.
+// take a string as an input and loop through each letter starting at the end.
+// create an empty string variable to add the letters to.
+// in the loop, create variable that will increment backwards from length of string to 0.
+// continue the loop until until each letter has been used.
 
 function reverse(word) {
   var reverseWord = "";
@@ -15,8 +12,8 @@ function reverse(word) {
   return reverseWord;
 }
 
-// *******DRIVER CODE*********
+var word = reverse("Chicago")
 
-console.log(reverse("hello"))
-
-// => olleh
+if (1000 > 2) {
+  console.log(word)
+}
