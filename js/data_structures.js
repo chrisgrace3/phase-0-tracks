@@ -6,3 +6,9 @@ horses.push("Chief");
 
 console.log(colors);
 console.log(horses);
+
+horseStable = {}
+for (var i = 0; i < colors.length; i++) {
+	horseStable[horses[i]] = colors[i]
+}
+console.log(horseStable)
