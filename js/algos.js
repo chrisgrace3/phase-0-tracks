@@ -1,22 +1,39 @@
-// write a function that takes an array of words or phrases and returns the
-// longest word or phrase in the array. So if we gave your function the array of
-// ["long phrase","longest phrase","longer phrase"], it would return "longest phrase".
-
-// input will be an array of indeterminate length
-// we will use a for loop that will loop through each word in the array
-// we will establish a new variable that will be assigned to whichever word
-// is the longest
-//
-
-function longestPhrase(array) {
-var longestPhrase = ""
-  for (var i = 0; i < array.length; i++) {
-  if (array[i].length > longestPhrase.length) { longestPhrase = array[i]
+function findLongestPhrase(phrases) {
+  var longestPhrase = phrases[0];
+  for (var i = 0; i < phrases.length; i++) {
+    if (phrases[i].length > longestPhrase.length ) {
+      longestPhrase = phrases[i];
+    }
   }
+  return longestPhrase;
 }
-console.log(longestPhrase)
+
+function sharePair(firstObject, secondObject) {
+  keysFirst = Object.keys(firstObject);
+  keysSecond = Object.keys(secondObject);
+  for (var i = 0; i < keysFirst.length; i++) {
+    newKey = keysFirst[i]
+    if (firstObject[newKey] == secondObject[newKey]) {
+      return true;
+    }
+  }
+  return false;
 }
+
+// function generator(length) {
+//   var words;
+// }
 
 // ******DRIVER CODE***********
 
-longestPhrase(["big", "bigger", "biggestest"] )
+// Release 2: Generate Random Test Data
+
+// Release 1: Find a Key-Value Match
+console.log(sharePair({name: "Steven", age: 54}, {name: "Tamir", age: 54})); // true
+console.log(sharePair({animal: "Dog", legs: 4}, {animal: "Dog", legs: 3}));  //  true
+
+
+// Release 0: Find the longest phrase
+console.log(findLongestPhrase(["big", "bigger", "biggestest", "even more bigger than biggestest"]));
+console.log(findLongestPhrase(["longest phrase in the world!", "nope", "not this one"]));
+console.log(findLongestPhrase(["long phrase","longest phrase","longer phrase"]));
