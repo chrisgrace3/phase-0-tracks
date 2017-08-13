@@ -20,7 +20,13 @@ function sharePair(firstObject, secondObject) {
   return false;
 }
 
+// function generator(length) {
+//   var words;
+// }
+
 // ******DRIVER CODE***********
+
+// Release 2: Generate Random Test Data
 
 // Release 1: Find a Key-Value Match
 console.log(sharePair({name: "Steven", age: 54}, {name: "Tamir", age: 54})); // true
