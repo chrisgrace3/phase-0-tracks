@@ -30,3 +30,23 @@ sqlite> SELECT * FROM superheroes, publishers WHERE superheroes.publisher_id = p
 4|Thor|55|true|1|1|Marvel
 5|Wonder Woman|35|true|2|2|DC
 6|Iron Man|42|false|1|1|Marvel
+
+4. Display a narrower selection of columns (fewer columns than all of them, in
+other words) from both tables using one query.
+
+sqlite> SELECT superheroes.name, publishers.name FROM superheroes JOIN publishers ON superheroes.publisher_id = publishers.id;
+Superman|DC
+Black Widow|Marvel
+Batman|DC
+Thor|Marvel
+Wonder Woman|DC
+Iron Man|Marvel
+
+5. Delete an item that meets some condition (you can choose a condition that
+makes sense).
+
+sqlite> DELETE FROM superheroes WHERE superhuman="false";
+sqlite> SELECT * FROM superheroes;
+1|Superman|29|true|2
+4|Thor|55|true|1
+5|Wonder Woman|35|true|2
