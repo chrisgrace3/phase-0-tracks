@@ -50,3 +50,6 @@ sqlite> SELECT * FROM superheroes;
 1|Superman|29|true|2
 4|Thor|55|true|1
 5|Wonder Woman|35|true|2
+
+Release 3: Try a few different joins in your database,
+and record the commands and the output here:
