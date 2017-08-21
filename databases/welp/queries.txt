@@ -11,7 +11,14 @@ sqlite> SELECT * FROM businesses, users, reviews WHERE reviews.business_id = bus
     Choose instead to just view the user's names, the business name, the star rating,
     and the comment.
 
-sqlite> SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment  FROM businesse
+sqlite> SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment  FROM businesses, users, reviews WHERE reviews.business_id = businesses.id AND reviews.user_id = users.id;
 Mandy|Kaling|Lotus Yoga|5|yoga was great I feel real stretchy now
 Denzel|George|Sushi World|2|the sushi tasted weird
 Holly|Berry|The Beagle Nightclub|4|Music was great!
+
+
+      How do you view the data of all three tables for just one particular business?
+
+sqlite> SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment  FROM businesses, users, reviews WHERE reviews.business_id = businesses.id AND reviews.user_id = users.id AND businesses.id=4;
+Mandy|Kaling|Lotus Yoga|5|yoga was great I feel real stretchy now
+sqlite>
