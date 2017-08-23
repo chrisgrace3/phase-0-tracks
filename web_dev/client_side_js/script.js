@@ -1,3 +1,14 @@
 var shoePhoto = document.getElementById('moonboots');
 
-shoePhoto.hidden = true;
+function hideShoe() {
+  shoePhoto.hidden = true;
+}
+
+// shoePhoto.addEventListener("click", hideShoe);
+
+
+var x = document.querySelectorAll("a[target]");
+var i;
+for (i = 0; i < x.length; i++) {
+    x[i].style.fontFamily = "Impact";
+}
