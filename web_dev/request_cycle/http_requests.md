@@ -1,4 +1,4 @@
-What are some common HTTP status codes?
+2. What are some common HTTP status codes?
 
   200 OK - The request has succeeded.
 
@@ -11,10 +11,11 @@ What are some common HTTP status codes?
   404 NOT FOUND - Used when the requested resource is not found.
 
 
-What is the difference between a GET request and a POST request? When might each be used?
+3. What is the difference between a GET request and a POST request? When might each be used?
 
-  The request method is usually either "GET" or "POST".  Basically if you fill in and submit a form on a web page it might generate a POST request (or it might be "GET"), whereas if you just click on a link, or activate one of your browser's "bookmarks" or "favourites", then the request method will always be "GET".
+  If you click on a link or access a page, you are most likely generating a GET request. GET is a way of retrieving information from the web server.
+  A POST request is generally generated when you are filling in a form on a page or submitting data to the web server.
 
-What is a cookie (the technical kind, not the delicious kind)? How does it relate to HTTP requests?
+4. What is a cookie (the technical kind, not the delicious kind)? How does it relate to HTTP requests?
 
-When a web server provides you with a response of any kind, it can send your browser a "cookie".  A "cookie" is a piece of information which will be stored in your browser. It will then be sent back to the web server when you request a document.
+  When a web server provides you with a response of any kind, it can send your browser a "cookie".  A "cookie" is a piece of information which will be stored in your browser. It will then be sent back to the web server when you request a document.
