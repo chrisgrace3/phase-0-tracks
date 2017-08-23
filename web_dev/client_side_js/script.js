@@ -4,7 +4,7 @@ function hideShoe() {
   shoePhoto.hidden = true;
 }
 
-// shoePhoto.addEventListener("click", hideShoe);
+shoePhoto.addEventListener("click", hideShoe);
 
 
 var x = document.querySelectorAll("a[target]");
