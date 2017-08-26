@@ -50,3 +50,7 @@ end
 get '/contact' do
   "123 Main St."
 end
+
+get '/great_job' do
+  "Good job, #{params[:name]}!"
+end
