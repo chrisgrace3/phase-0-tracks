@@ -51,6 +51,15 @@ get '/contact' do
   "123 Main St."
 end
 
+# A /great_job route that can take a person's name as a query parameter (not a route parameter) and say "Good job, [person's name]!". If the query parameter is not present, the route simply says "Good job!"
 get '/great_job' do
   "Good job, #{params[:name]}!"
+end
+
+# A route that uses route parameters to add two numbers and respond with the result. The data types are tricky here -- when will the data need to be (or arrive as) a string?
+
+get '/:num1/add/:num2' do
+  num1 = params[:num1]
+  num2 = params[:num2]
+  "#{num1} plus #{num2} equals #{num1.to_i + num2.to_i}"
 end
