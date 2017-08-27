@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>View Campus Locations</title>
+</head>
+<body>
+<h1>View Campus Locations</h1>
+<p>List of our campuses!</p>
+<ul>
+  <% @campuses.each do |student| %>
+      <li><%=  student %></li>
+  <% end %>
+</ul>
+
+</body>
+</html>
+
+
+
+
+
+
+<!-- <form action='/students/location' method='GET'>
+  <p>Select Campus:</p>
+  <select name="/campus/location">
+    <option value="SD">San Diego</option>
+    <option value="NYC">New York City</option>
+    <option value="CHI">Chicago</option>
+    <option value="SEA">Seattle</option>
+    <option value="SF">San Francisco</option>
+  </select>
+  <br>
+  <button type="submit">View</button>
+</form> -->

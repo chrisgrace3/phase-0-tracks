@@ -25,3 +25,27 @@ post '/students' do
 end
 
 # add static resources
+
+# update new students
+get '/students/update' do
+  erb :update_student
+end
+
+post '/students/update' do
+  db.execute("UPDATE students SET age=? WHERE students.name=?", [params['age'].to_i, params['name']])
+  redirect '/'
+end
+
+# get 'students/delete' do
+#   erb :delete_student
+# end
+
+# post 'students/delete' do
+#   db.execute("DELETE FROM students WHERE students.id=?", [params['id'].to_i])
+# end
+
+get '/campuses' do
+  # @campuses = db.execute("SELECT campus FROM students")
+  @campuses = ["Chicago", "New York", "San Francisco", "Seattle", "San Diego"]
+  erb :campus_location
+end
